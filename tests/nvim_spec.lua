@@ -36,7 +36,7 @@ end)
 
 test("nvim: последнее слово прямо в режиме вставки", function()
   buffer({ "пишу" }, { 1, 0 })
-  keys("A ntrcn<M-r> lfkmit<Esc>")
+  keys("A ntrcn<M-r> lfkmit<M-r><Esc>")
   eq(text(), "пишу текст дальше")
 end)
 

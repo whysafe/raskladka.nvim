@@ -10,8 +10,9 @@ jobs:
     name: Lua ${{ matrix.lua }}
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
-        lua: ["5.1", "5.4", "luajit-2.1"]
+        lua: ["5.1", "5.4", "luajit-openresty"]
     steps:
       - uses: actions/checkout@v4
       - uses: leafo/gh-actions-lua@v10
@@ -23,6 +24,7 @@ jobs:
     name: Neovim ${{ matrix.nvim }}
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         nvim: ["v0.9.5", "stable", "nightly"]
     steps:
