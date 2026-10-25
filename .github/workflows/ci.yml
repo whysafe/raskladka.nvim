@@ -18,7 +18,7 @@ jobs:
       - uses: leafo/gh-actions-lua@v10
         with:
           luaVersion: ${{ matrix.lua }}
-      - run: lua tests/run.lua
+      - run: $(command -v lua || command -v luajit) tests/run.lua
 
   neovim:
     name: Neovim ${{ matrix.nvim }}
